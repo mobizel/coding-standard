@@ -32,7 +32,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import('vendor/mobizel/coding-standard/ecs.php');
 
     $header = <<<EOM
-This file is part of Rebelote.
+This file is part of <The Project>.
 
 (c) Mobizel
 
