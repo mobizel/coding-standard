@@ -1,0 +1,19 @@
+{
+    "name": "mobizel/coding-standard",
+    "description": "Battle-tested coding standard configuration used at Mobizel.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "symplify/easy-coding-standard": "^9.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\CodingStandard\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
