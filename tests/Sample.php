@@ -11,4 +11,11 @@ class Sample
     public function foo(): void
     {
     }
+
+    public static function choices(): array
+    {
+        return [
+            'foo' => 'bar',
+        ];
+    }
 }
