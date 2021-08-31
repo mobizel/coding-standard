@@ -18,4 +18,10 @@ class Sample
             'foo' => 'bar',
         ];
     }
+
+    public function run(): void
+    {
+        /** @var string|null $description */
+        $description = true ? 'This is a description' : null;
+    }
 }

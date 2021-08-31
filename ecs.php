@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use PhpCsFixer\Fixer\Casing\NativeFunctionCasingFixer;
 use PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use PhpCsFixer\Fixer\Import\OrderedImportsFixer;
@@ -14,7 +13,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(SetList::PHP_CS_FIXER);
+    $containerConfigurator->import(SetList::SYMFONY);
 
     $services = $containerConfigurator->services();
     $services->set(DeclareStrictTypesFixer::class);
