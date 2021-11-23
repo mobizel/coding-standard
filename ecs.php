@@ -9,6 +9,7 @@ use PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitMethodCasingFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer;
 use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
+use PhpCsFixer\Fixer\Strict\StrictComparisonFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
@@ -19,6 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(DeclareStrictTypesFixer::class);
     $services->set(OrderedImportsFixer::class);
     $services->set(NoUnusedImportsFixer::class);
+    $services->set(StrictComparisonFixer::class);
 
     $parameters = $containerConfigurator->parameters();
     $parameters->set('skip', [
