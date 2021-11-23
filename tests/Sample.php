@@ -19,6 +19,11 @@ class Sample
         ];
     }
 
+    public function isIdentical(string $foo, string $bar): bool
+    {
+        return $foo === $bar;
+    }
+
     public function run(): void
     {
         /** @var string|null $description */
