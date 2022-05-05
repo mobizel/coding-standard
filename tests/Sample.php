@@ -8,6 +8,12 @@ class Sample
 {
     public const BAR = 'bar';
 
+    public function __construct(
+        public string $foo,
+        public string $bar,
+    ) {
+    }
+
     public function foo(): void
     {
     }
