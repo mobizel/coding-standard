@@ -3,8 +3,8 @@
     "description": "Battle-tested coding standard configuration used at Mobizel.",
     "license": "MIT",
     "require": {
-        "php": "^7.4 || ^8.0",
-        "symplify/easy-coding-standard": "^9.0"
+        "php": "^8.0",
+        "symplify/easy-coding-standard": "^10.0"
     },
     "autoload-dev": {
         "psr-4": {
