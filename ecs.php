@@ -12,13 +12,13 @@ use PhpCsFixer\Fixer\PhpUnit\PhpUnitMethodCasingFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer;
 use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\Strict\StrictComparisonFixer;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(SetList::SYMFONY);
+return static function (ECSConfig $ecsConfig): void {
+    $ecsConfig->import(SetList::PSR_12);
 
-    $services = $containerConfigurator->services();
+    $services = $ecsConfig->services();
     $services->set(DeclareStrictTypesFixer::class);
     $services->set(OrderedImportsFixer::class);
     $services->set(NoUnusedImportsFixer::class);
@@ -33,7 +33,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(TrailingCommaInMultilineFixer::class)
         ->call('configure', [['elements' => ['arrays', 'arguments', 'parameters']]]);
 
-    $parameters = $containerConfigurator->parameters();
+    $parameters = $ecsConfig->parameters();
     $parameters->set('skip', [
         VisibilityRequiredFixer::class => ['*Spec.php'],
         PhpUnitTestClassRequiresCoversFixer::class => ['*Test.php'],
