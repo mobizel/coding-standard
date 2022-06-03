@@ -33,6 +33,6 @@ class Sample
     public function run(): void
     {
         /** @var string|null $description */
-        $description = true ? 'This is a description' : null;
+        $description = true ? 'This is a' . ' description' : null;
     }
 }

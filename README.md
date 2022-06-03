@@ -16,7 +16,7 @@ Installation & usage
 2. Import the configuration file in your `ecs.php`:
 
     ```php
-    $containerConfigurator->import('vendor/mobizel/coding-standard/ecs.php');
+    $ecsConfig->import('vendor/mobizel/coding-standard/ecs.php');
     ```
 
 Example config (ecs.php)
@@ -26,10 +26,10 @@ Example config (ecs.php)
 <?php
 
 use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import('vendor/mobizel/coding-standard/ecs.php');
+return static function (ECSConfig $ecsConfig): void {
+    $ecsConfig->import('vendor/mobizel/coding-standard/ecs.php');
 
     $header = <<<EOM
 This file is part of <The Project>.
@@ -40,7 +40,7 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 EOM;
 
-    $services = $containerConfigurator->services();
+    $services = $ecsConfig->services();
     $services
         ->set(HeaderCommentFixer::class)
         ->call('configure', [[
